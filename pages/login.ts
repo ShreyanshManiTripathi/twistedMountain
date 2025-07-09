@@ -1,5 +1,5 @@
 import { PageObjectManager } from '../pages/poManager';
-
+import {selectors} from '..//testData/locator.json';
 
 export class loginPage {
  
@@ -19,17 +19,16 @@ export class loginPage {
   }
 
   async enterCredentials(username: string, password: string) {
-    const usernameLocator: string = 'input#txt-username'
-    const passwordLocator: string = 'input#txt-password';
+ 
     const page = this.pom.getPage();
-    await page.fill(usernameLocator, username);
-    await page.fill(passwordLocator, password);
+    await page.fill(selectors.login.username, username);
+    await page.fill(selectors.login.password, password);
   }
 
   async submitLogin() {
     const loginbuttonLocator: string = 'button#btn-login';
     const page = this.pom.getPage();
-    await page.click(loginbuttonLocator);
+    await page.click(selectors.login.submit);
   }
 }
 

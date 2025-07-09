@@ -1,0 +1,24 @@
+{ 
+    "selectors": {
+
+    "login": {
+        "username": "input#txt-username",
+        "password": "input#txt-password",
+        "submit": "button#btn-login"
+    },
+    "appointment": {
+        "facility": "select#facility",
+        "comment": "textarea#comment",
+        "date": "input#visit_date",
+        "submit": "button[type='submit']"
+    },
+    "confirmation": {
+        "header": "h2",
+        "facility": "p#facility",
+        "visit_date": "p#visit_date",
+        "program": "p#program",
+        "hospital_readmission": "p#hospital_readmission",
+        "comment": "p#comment"
+    }
+}
+}

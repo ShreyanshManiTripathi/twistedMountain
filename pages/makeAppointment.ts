@@ -14,9 +14,7 @@ export class makeAppointmentPage {
         await page.selectOption('#combo_facility', facility);
         await page.locator('textarea#txt_comment').fill(comment);
         await page.locator('#chk_hospotal_readmission');
-        
-        
-        const checkbox = page.locator('#chk_hospotal_readmission');
+         const checkbox = page.locator('#chk_hospotal_readmission');
         const isChecked = await checkbox.isChecked();
         this.reAdmission = isChecked ? 'Yes' : 'No';
         
