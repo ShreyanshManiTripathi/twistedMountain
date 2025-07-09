@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "testCaseName": "Test Case 1",
+            "testData": {
+                "URL": "https://katalon-demo-cura.herokuapp.com/",
+                "username": "John Doe",
+                "password": "ThisIsNotAPassword",
+                "testComment": "This is a test comment",
+                "appointmentDate": "12/10/2025"
+            }
+        }
+       
+    ]
+   
+}
