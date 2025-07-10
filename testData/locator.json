@@ -3,7 +3,8 @@
         "login": {
             "username": "input#txt-username",
             "password": "input#txt-password",
-            "submit": "button#btn-login"
+            "submit": "button#btn-login",
+            "errorMessage": "//p[@class='lead text-danger']"
         },
         "appointment": {
             "facility": "#combo_facility",

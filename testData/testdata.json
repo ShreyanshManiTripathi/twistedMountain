@@ -1,17 +1,30 @@
 {
+    "testData":{
     "data": [
         {
-            "testData": {
+            "fixAppointmentData": {
                 "URL": "https://katalon-demo-cura.herokuapp.com/",
                 "username": "John Doe",
                 "password": "ThisIsNotAPassword",
                 "testComment": "This is a test comment",
                 "appointmentDate": "12/10/2025",
                 "facility": "Tokyo CURA Healthcare Center",
-                "appointmentConfirmationMessage": "Appointment Confirmation"
+                "appointmentConfirmationMessage": "Appointment Confirmation",
+                "errorMessage": "Login failed! Please ensure the username and password are valid."
             }
-        }
+        } 
+        
        
     ]
    
+},
+    "Incorrrectlogindata": {
+        "selectors": {
+            "login": {
+                 "username": "John Snow",
+                "password": "ThisIsLannister"
+            }
+           
+        }
+    }
 }
