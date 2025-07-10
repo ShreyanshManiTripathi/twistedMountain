@@ -1,5 +1,5 @@
 import { PageObjectManager } from "./poManager";
-
+import { selectors } from "../testData/locator.json";
 
 export class makeAppointmentPage {
     private pom: PageObjectManager;
@@ -11,25 +11,26 @@ export class makeAppointmentPage {
 
     async fillAppointmentDetails(facility: string, comment: string, date: string) {
         const page = this.pom.getPage();
-        await page.selectOption('#combo_facility', facility);
-        await page.locator('textarea#txt_comment').fill(comment);
-        await page.locator('#chk_hospotal_readmission');
-         const checkbox = page.locator('#chk_hospotal_readmission');
+        await page.selectOption(selectors.appointment.facility, facility);
+        await page.locator(selectors.appointment.comment).fill(comment);
+        // await page.locator(selectors.appointment.date).pressSequentially(date);
+        await page.locator(selectors.appointment.hospital_readmission);
+         const checkbox = page.locator(selectors.appointment.hospital_readmission);
         const isChecked = await checkbox.isChecked();
         this.reAdmission = isChecked ? 'Yes' : 'No';
         
-        await page.locator('input#radio_program_medicaid').click();
-        const healthCareProgram = await page.locator('input#radio_program_medicaid');
+        await page.locator(selectors.appointment.healthcareProgram).click();
+        const healthCareProgram = await page.locator(selectors.appointment.healthcareProgram);
         
         this.healthCareProgramValue = await healthCareProgram.inputValue();
-        await page.locator('input#txt_visit_date').pressSequentially(date);
+        await page.locator(selectors.appointment.date).pressSequentially(date);
 
     }
 
 
     async submitAppointment() {
         const page = this.pom.getPage();
-        await page.locator('button#btn-book-appointment').click();
+        await page.locator(selectors.appointment.submit).click();
     }
 
     async getReAdmissionStatus() {
